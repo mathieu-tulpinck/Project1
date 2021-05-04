@@ -17,6 +17,8 @@
 		4332448F26402CDF003E06FD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4332448E26402CDF003E06FD /* README.md */; };
 		4332449426404510003E06FD /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4332449326404510003E06FD /* SecondTabViewController.swift */; };
 		4332449C26405071003E06FD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4332449B26405071003E06FD /* TableViewController.swift */; };
+		43478DEF2640732200302CC0 /* VaccinationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478DEE2640732200302CC0 /* VaccinationCenter.swift */; };
+		434E7FB6264179D800F25F84 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E7FB5264179D800F25F84 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		4332448E26402CDF003E06FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4332449326404510003E06FD /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		4332449B26405071003E06FD /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = Project1/TableViewController.swift; sourceTree = SOURCE_ROOT; };
+		43478DEE2640732200302CC0 /* VaccinationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationCenter.swift; sourceTree = "<group>"; };
+		434E7FB5264179D800F25F84 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		4332445D264025F2003E06FD /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
+				43478DED2640730400302CC0 /* Models */,
 				4332449026404495003E06FD /* ViewControllers */,
 				4332445E264025F2003E06FD /* AppDelegate.swift */,
 				43324460264025F2003E06FD /* SceneDelegate.swift */,
@@ -138,8 +143,17 @@
 			children = (
 				4332449B26405071003E06FD /* TableViewController.swift */,
 				4332449326404510003E06FD /* SecondTabViewController.swift */,
+				434E7FB5264179D800F25F84 /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		43478DED2640730400302CC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43478DEE2640732200302CC0 /* VaccinationCenter.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,10 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43478DEF2640732200302CC0 /* VaccinationCenter.swift in Sources */,
 				4332445F264025F2003E06FD /* AppDelegate.swift in Sources */,
 				4332449426404510003E06FD /* SecondTabViewController.swift in Sources */,
 				43324461264025F2003E06FD /* SceneDelegate.swift in Sources */,
 				4332449C26405071003E06FD /* TableViewController.swift in Sources */,
+				434E7FB6264179D800F25F84 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
