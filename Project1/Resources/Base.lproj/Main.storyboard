@@ -89,10 +89,14 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8SJ-ol-j9q">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="128" id="eSb-kO-HuZ"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="128" id="mqU-ph-5fA"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="TuD-V4-jGu" appends="YES" id="CjU-El-PKk"/>
+                                        </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fm7-Yk-xou">
                                         <rect key="frame" x="128" y="0.0" width="247" height="128"/>
@@ -151,17 +155,56 @@
                         <outlet property="centerImageView" destination="8SJ-ol-j9q" id="LcH-PP-dqY"/>
                         <outlet property="centerName" destination="Gm5-SQ-wtx" id="RbE-tj-1Ob"/>
                         <outlet property="centerPhoneNumber" destination="VXh-h1-fwh" id="hY1-pJ-aJ0"/>
+                        <outlet property="mapView" destination="WJa-oz-mmH" id="zz9-oA-hOP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGc-cb-BdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TuD-V4-jGu">
+                    <connections>
+                        <action selector="didTapImageView:" destination="WTb-Rk-IPO" id="TEW-61-Q0W"/>
+                        <segue destination="jtj-S2-gbY" kind="show" identifier="imageViewSegue" id="9vV-iG-bVj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3440.8000000000002" y="-4.0479760119940034"/>
         </scene>
-        <!--Item-->
+        <!--Image View Controller-->
+        <scene sceneID="vgW-OM-Xwt">
+            <objects>
+                <viewController id="jtj-S2-gbY" customClass="ImageViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bfc-st-cAd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a26-YP-GzW">
+                                <rect key="frame" x="62.5" y="206" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="bMd-oo-pVA"/>
+                                    <constraint firstAttribute="width" constant="250" id="uVT-19-qyB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="azJ-Oe-6u8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a26-YP-GzW" firstAttribute="centerY" secondItem="azJ-Oe-6u8" secondAttribute="centerY" id="9P1-bq-CDy"/>
+                            <constraint firstItem="a26-YP-GzW" firstAttribute="centerX" secondItem="azJ-Oe-6u8" secondAttribute="centerX" id="9di-64-9HU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Naj-A3-QvO"/>
+                    <connections>
+                        <outlet property="centerImageView" destination="a26-YP-GzW" id="kp7-fu-0Hu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owE-N7-c9U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4206" y="-4"/>
+        </scene>
+        <!--List-->
         <scene sceneID="0y8-oD-bwl">
             <objects>
                 <navigationController id="Q8Q-Cy-aRM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="QHI-Bb-JqT"/>
+                    <tabBarItem key="tabBarItem" title="List" id="QHI-Bb-JqT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b5S-UA-SmT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -174,7 +217,7 @@
             </objects>
             <point key="canvasLocation" x="1748" y="-4"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="nOc-tA-5AS">
             <objects>
                 <viewController id="KxO-4U-eck" customClass="SecondTabViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,27 +225,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zth-nO-8tl">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NCc-cW-KM8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7x9-5A-J1e">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Map" id="EsX-5j-2lN"/>
+                                    <navigationItem title="Map" id="YSH-XY-mzm"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nqC-Rt-t3q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7x9-5A-J1e" firstAttribute="centerX" secondItem="3cR-Aq-Cpf" secondAttribute="centerX" id="FXt-pT-JBj"/>
+                            <constraint firstItem="7x9-5A-J1e" firstAttribute="top" secondItem="nqC-Rt-t3q" secondAttribute="top" id="P6u-GG-U6q"/>
+                            <constraint firstItem="NCc-cW-KM8" firstAttribute="bottom" secondItem="nqC-Rt-t3q" secondAttribute="bottom" id="U4i-iB-2Bp"/>
+                            <constraint firstItem="7x9-5A-J1e" firstAttribute="leading" secondItem="NCc-cW-KM8" secondAttribute="leading" id="U6E-Pb-CBF"/>
+                            <constraint firstItem="7x9-5A-J1e" firstAttribute="trailing" secondItem="NCc-cW-KM8" secondAttribute="trailing" id="U7U-5T-DN5"/>
+                            <constraint firstItem="7x9-5A-J1e" firstAttribute="leading" secondItem="nqC-Rt-t3q" secondAttribute="leading" id="aCM-hs-BFw"/>
+                            <constraint firstItem="NCc-cW-KM8" firstAttribute="top" secondItem="7x9-5A-J1e" secondAttribute="bottom" id="b0B-oT-Kvm"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="XTt-nw-q8y"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="XTt-nw-q8y"/>
+                    <connections>
+                        <outlet property="mapView" destination="NCc-cW-KM8" id="5VX-9k-alX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0C5-Hw-44e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="713"/>
+            <point key="canvasLocation" x="1748" y="712.89355322338838"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Base Tab Bar Controller-->
         <scene sceneID="W26-hC-Re1">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Tzz-zr-b1Z" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Tzz-zr-b1Z" customClass="BaseTabBarController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lbb-iM-q6g">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

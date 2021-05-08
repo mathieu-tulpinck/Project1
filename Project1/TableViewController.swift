@@ -8,18 +8,16 @@
 import UIKit
 import CoreLocation
 
-let vaccinationCenter1 = VaccinationCenter(name: "Namur Expo", address: Address(postCode: 5000, commune: "Namur", street: "av. Sergent Vrithoff", buildingNumber: 2), coordinates: CLLocationCoordinate2D(latitude: 50.46699406994812, longitude: 4.848334237713486), phoneNumber: "081253555", centerImage: UIImage(named: "center"))
-let vaccinationCenter2 = VaccinationCenter(name: "Clinique Saint-Luc", address: Address(postCode: 5000, commune: "Namur", street: "rue Saint-Luc", buildingNumber: 8), coordinates:CLLocationCoordinate2D(latitude: 50.47754246480081, longitude: 4.881019860154125), phoneNumber: "081209111", centerImage: UIImage(named: "center"))
-
-var vaccinationCenters: [VaccinationCenter] = [vaccinationCenter1, vaccinationCenter2]
 
 class TableViewController: UITableViewController {
+    
+    let vaccinationCenters = BaseTabBarController.init().vaccinationCenters
     
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate = self
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,7 +43,6 @@ class TableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "centerCell", for: indexPath) as? CenterCell else {
             return UITableViewCell()
         }
-        
         //configure the cell
         cell.setup(center: center)
 
@@ -99,6 +96,7 @@ class TableViewController: UITableViewController {
     }
 }
 
+//custom cell used to populate the table view
 class CenterCell: UITableViewCell {
     @IBOutlet weak var centerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -109,5 +107,4 @@ class CenterCell: UITableViewCell {
         nameLabel.text = center.name
         communeLabel.text = center.address?.commune
     }
-    
 }

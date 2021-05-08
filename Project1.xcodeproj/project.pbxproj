@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4310D4782643E5D100B9FB85 /* VaccinationCenterAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4310D4772643E5D100B9FB85 /* VaccinationCenterAnnotation.swift */; };
+		4310D47A264403BE00B9FB85 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4310D479264403BE00B9FB85 /* BaseTabBarController.swift */; };
 		4332445F264025F2003E06FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4332445E264025F2003E06FD /* AppDelegate.swift */; };
 		43324461264025F2003E06FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43324460264025F2003E06FD /* SceneDelegate.swift */; };
 		43324466264025F2003E06FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43324464264025F2003E06FD /* Main.storyboard */; };
@@ -19,6 +21,7 @@
 		4332449C26405071003E06FD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4332449B26405071003E06FD /* TableViewController.swift */; };
 		43478DEF2640732200302CC0 /* VaccinationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478DEE2640732200302CC0 /* VaccinationCenter.swift */; };
 		434E7FB6264179D800F25F84 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E7FB5264179D800F25F84 /* DetailsViewController.swift */; };
+		434E7FB826419CAA00F25F84 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E7FB726419CA900F25F84 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4310D4772643E5D100B9FB85 /* VaccinationCenterAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationCenterAnnotation.swift; sourceTree = "<group>"; };
+		4310D479264403BE00B9FB85 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		4332445B264025F2003E06FD /* Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4332445E264025F2003E06FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43324460264025F2003E06FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		4332449B26405071003E06FD /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = Project1/TableViewController.swift; sourceTree = SOURCE_ROOT; };
 		43478DEE2640732200302CC0 /* VaccinationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationCenter.swift; sourceTree = "<group>"; };
 		434E7FB5264179D800F25F84 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		434E7FB726419CA900F25F84 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432D5ECB26452AB000863B46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4332445E264025F2003E06FD /* AppDelegate.swift */,
+				43324460264025F2003E06FD /* SceneDelegate.swift */,
+				43324464264025F2003E06FD /* Main.storyboard */,
+				43324469264025F4003E06FD /* LaunchScreen.storyboard */,
+				4332446C264025F4003E06FD /* Info.plist */,
+				43324467264025F4003E06FD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		43324452264025F2003E06FD = {
 			isa = PBXGroup;
 			children = (
@@ -108,14 +127,9 @@
 		4332445D264025F2003E06FD /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
+				432D5ECB26452AB000863B46 /* Resources */,
 				43478DED2640730400302CC0 /* Models */,
 				4332449026404495003E06FD /* ViewControllers */,
-				4332445E264025F2003E06FD /* AppDelegate.swift */,
-				43324460264025F2003E06FD /* SceneDelegate.swift */,
-				43324464264025F2003E06FD /* Main.storyboard */,
-				43324467264025F4003E06FD /* Assets.xcassets */,
-				43324469264025F4003E06FD /* LaunchScreen.storyboard */,
-				4332446C264025F4003E06FD /* Info.plist */,
 			);
 			path = Project1;
 			sourceTree = "<group>";
@@ -144,6 +158,8 @@
 				4332449B26405071003E06FD /* TableViewController.swift */,
 				4332449326404510003E06FD /* SecondTabViewController.swift */,
 				434E7FB5264179D800F25F84 /* DetailsViewController.swift */,
+				434E7FB726419CA900F25F84 /* ImageViewController.swift */,
+				4310D479264403BE00B9FB85 /* BaseTabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -151,6 +167,7 @@
 		43478DED2640730400302CC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4310D4772643E5D100B9FB85 /* VaccinationCenterAnnotation.swift */,
 				43478DEE2640732200302CC0 /* VaccinationCenter.swift */,
 			);
 			path = Models;
@@ -290,7 +307,10 @@
 				43478DEF2640732200302CC0 /* VaccinationCenter.swift in Sources */,
 				4332445F264025F2003E06FD /* AppDelegate.swift in Sources */,
 				4332449426404510003E06FD /* SecondTabViewController.swift in Sources */,
+				4310D47A264403BE00B9FB85 /* BaseTabBarController.swift in Sources */,
+				434E7FB826419CAA00F25F84 /* ImageViewController.swift in Sources */,
 				43324461264025F2003E06FD /* SceneDelegate.swift in Sources */,
+				4310D4782643E5D100B9FB85 /* VaccinationCenterAnnotation.swift in Sources */,
 				4332449C26405071003E06FD /* TableViewController.swift in Sources */,
 				434E7FB6264179D800F25F84 /* DetailsViewController.swift in Sources */,
 			);
@@ -470,7 +490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KU52597TU;
-				INFOPLIST_FILE = Project1/Info.plist;
+				INFOPLIST_FILE = Project1/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,7 +509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KU52597TU;
-				INFOPLIST_FILE = Project1/Info.plist;
+				INFOPLIST_FILE = Project1/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
