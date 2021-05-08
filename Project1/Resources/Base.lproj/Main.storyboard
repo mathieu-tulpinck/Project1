@@ -27,8 +27,8 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cce-43-L8W">
                                             <rect key="frame" x="16" y="2" width="40" height="40.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Fc2-Lc-D9D"/>
-                                                <constraint firstAttribute="width" constant="40" id="pfo-DS-tz9"/>
+                                                <constraint firstAttribute="width" secondItem="Cce-43-L8W" secondAttribute="height" multiplier="1:1" id="Dj7-Ay-Zjh"/>
+                                                <constraint firstAttribute="width" constant="40" id="YKv-dl-Vc0"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELr-vx-iWF" userLabel="Name Label">

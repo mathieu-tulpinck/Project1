@@ -11,7 +11,10 @@ import MapKit
 class DetailsViewController: UIViewController {
     
     var vaccinationCenter: VaccinationCenter?
-    
+    var vaccinationCenterAnnotation: VaccinationCenterAnnotation {
+        return VaccinationCenterAnnotation(coordinate: vaccinationCenter!.coordinates!, title: vaccinationCenter?.name, subtitle: vaccinationCenter?.address?.commune)
+    }
+        
     @IBOutlet weak var centerImageView: UIImageView!{
         didSet {
             centerImageView.isUserInteractionEnabled = true
@@ -35,8 +38,8 @@ class DetailsViewController: UIViewController {
         centerPhoneNumber.text = vaccinationCenter?.phoneNumber
         
         //registers annotation on map view
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-        let vaccinationCenterAnnotation = VaccinationCenterAnnotation(coordinate: vaccinationCenter!.coordinates!, title: vaccinationCenter?.name)
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(VaccinationCenterAnnotation.self))
+  
         mapView.addAnnotation(vaccinationCenterAnnotation)
         
         //centers map on vaccination center
@@ -62,15 +65,25 @@ class DetailsViewController: UIViewController {
 }
 
 extension DetailsViewController: MKMapViewDelegate {
-    
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let vaccinationCenterAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView {
-            vaccinationCenterAnnotationView.animatesWhenAdded = true
-            vaccinationCenterAnnotationView.titleVisibility = .adaptive
-            
-            return vaccinationCenterAnnotationView
+        
+        var annotationView: MKAnnotationView?
+        if let annotation = annotation as? VaccinationCenterAnnotation {
+            annotationView = setupVaccinationCenterAnnotationView(for: annotation, on: mapView)
         }
-        return nil
+        
+        return annotationView
     }
     
+    private func setupVaccinationCenterAnnotationView(for annotation: VaccinationCenterAnnotation, on mapView: MKMapView) -> MKAnnotationView {
+        let identifier = NSStringFromClass(VaccinationCenterAnnotation.self)
+        let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier, for: annotation)
+        if let markerAnnotationView = view as? MKMarkerAnnotationView {
+            markerAnnotationView.animatesWhenAdded = true
+            markerAnnotationView.titleVisibility = .adaptive
+        }
+        
+    return view
+    }
 }

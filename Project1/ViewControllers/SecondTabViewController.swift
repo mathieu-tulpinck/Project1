@@ -17,7 +17,7 @@ class SecondTabViewController: UIViewController {
     let vaccinationCenters = BaseTabBarController.init().vaccinationCenters
     var vaccinationCentersAnnotations: [VaccinationCenterAnnotation] {
         return vaccinationCenters.map {
-            VaccinationCenterAnnotation(coordinate: $0.coordinates!, title: $0.name)
+            VaccinationCenterAnnotation(coordinate: $0.coordinates!, title: $0.name, subtitle: $0.address?.commune)
         }
     }
 
@@ -36,8 +36,8 @@ class SecondTabViewController: UIViewController {
         
         locationManager.startUpdatingLocation()
         
-        //registers annotations on map view
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        //registers annotation views on map view so the system can reuse them
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(VaccinationCenterAnnotation.self))
         for vaccinationCenterAnnotation in vaccinationCentersAnnotations {
             mapView.addAnnotation(vaccinationCenterAnnotation)
         }
@@ -45,15 +45,34 @@ class SecondTabViewController: UIViewController {
 }
 
 extension SecondTabViewController: MKMapViewDelegate {
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        if let vaccinationCentersAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView {
-            vaccinationCentersAnnotationView.animatesWhenAdded = true
-            vaccinationCentersAnnotationView.titleVisibility = .adaptive
-            
-            return vaccinationCentersAnnotationView
+        var annotationView: MKAnnotationView?
+        if let annotation = annotation as? VaccinationCenterAnnotation {
+            annotationView = setupVaccinationCenterAnnotationView(for: annotation, on: mapView)
         }
-        return nil
+        
+        return annotationView
+    }
+    
+    private func setupVaccinationCenterAnnotationView(for annotation: VaccinationCenterAnnotation, on mapView: MKMapView) -> MKAnnotationView {
+        let identifier = NSStringFromClass(VaccinationCenterAnnotation.self)
+        let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier, for: annotation)
+        if let markerAnnotationView = view as? MKMarkerAnnotationView {
+            markerAnnotationView.animatesWhenAdded = true
+            markerAnnotationView.canShowCallout = true
+            markerAnnotationView.titleVisibility = .adaptive
+            markerAnnotationView.subtitleVisibility = .adaptive
+            let imageView = UIImage(named: "center")
+            let size = CGSize(width: 50, height: 50)
+            UIGraphicsBeginImageContext(size)
+            imageView!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            let resizedImageView = UIGraphicsGetImageFromCurrentImageContext()
+            markerAnnotationView.detailCalloutAccessoryView = UIImageView(image: resizedImageView)
+        }
+        
+    return view
     }
 }
 
@@ -66,6 +85,7 @@ extension SecondTabViewController: CLLocationManagerDelegate {
     }
 }
 
+//attempt to constrain map view to user location and closest vaccination center
 //extension Array where Iterator.Element == VaccinationCenterAnnotation {
 //    func closest(to fixedLocation: CLLocation) -> Iterator.Element? {
 //        return self.sorted { (vaccinationCenterAnnotation1, vaccinationCenterAnnotation2) -> Bool in

@@ -9,5 +9,5 @@ iOS Development - werkstuk 1
 * https://github.com/headonn5/MapKit-Nearby-Annotation-Swift
 
 ## License
-MIT(https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT)
 

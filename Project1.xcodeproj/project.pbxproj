@@ -127,8 +127,8 @@
 		4332445D264025F2003E06FD /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
-				432D5ECB26452AB000863B46 /* Resources */,
 				43478DED2640730400302CC0 /* Models */,
+				432D5ECB26452AB000863B46 /* Resources */,
 				4332449026404495003E06FD /* ViewControllers */,
 			);
 			path = Project1;
