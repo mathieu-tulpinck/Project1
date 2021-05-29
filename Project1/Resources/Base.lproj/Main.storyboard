@@ -12,55 +12,50 @@
         <scene sceneID="sME-DA-M4m">
             <objects>
                 <tableViewController id="VFL-GI-u7J" customClass="TableViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XNW-Fy-KfS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XNW-Fy-KfS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="centerCell" id="O2O-xe-Lfg" customClass="CenterCell" customModule="Project1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="375" height="44.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O2O-xe-Lfg" id="eNh-Pv-qKB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cce-43-L8W">
-                                            <rect key="frame" x="16" y="2" width="40" height="40.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="Cce-43-L8W" secondAttribute="height" multiplier="1:1" id="Dj7-Ay-Zjh"/>
-                                                <constraint firstAttribute="width" constant="40" id="YKv-dl-Vc0"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELr-vx-iWF" userLabel="Name Label">
-                                            <rect key="frame" x="72" y="0.0" width="42" height="44.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAs-yq-LXm" userLabel="Commune Label">
-                                            <rect key="frame" x="301" y="0.0" width="42" height="44.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhl-8X-yOr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f4m-h5-FRP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ky-14-gvT" userLabel="Name Label">
+                                                    <rect key="frame" x="125" y="0.0" width="125" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUu-8Q-xha" userLabel="Commune Label">
+                                                    <rect key="frame" x="250" y="0.0" width="125" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="WAs-yq-LXm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ELr-vx-iWF" secondAttribute="trailing" constant="16" id="5T3-sF-jWn"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="WAs-yq-LXm" secondAttribute="trailing" constant="16" id="5Z5-WC-hQi"/>
-                                        <constraint firstItem="WAs-yq-LXm" firstAttribute="top" secondItem="eNh-Pv-qKB" secondAttribute="top" id="6VG-Yq-SJ3"/>
-                                        <constraint firstAttribute="bottom" secondItem="ELr-vx-iWF" secondAttribute="bottom" id="Bp9-be-tyU"/>
-                                        <constraint firstAttribute="bottom" secondItem="WAs-yq-LXm" secondAttribute="bottom" id="Kzf-lb-VRQ"/>
-                                        <constraint firstItem="Cce-43-L8W" firstAttribute="top" secondItem="eNh-Pv-qKB" secondAttribute="top" constant="2" id="Z1c-3s-Foh"/>
-                                        <constraint firstItem="ELr-vx-iWF" firstAttribute="leading" secondItem="Cce-43-L8W" secondAttribute="trailing" constant="16" id="koE-Aq-fvm"/>
-                                        <constraint firstAttribute="bottom" secondItem="Cce-43-L8W" secondAttribute="bottom" constant="2" id="mFw-Ca-271"/>
-                                        <constraint firstItem="ELr-vx-iWF" firstAttribute="top" secondItem="eNh-Pv-qKB" secondAttribute="top" id="qjk-gF-TCv"/>
-                                        <constraint firstItem="Cce-43-L8W" firstAttribute="leading" secondItem="eNh-Pv-qKB" secondAttribute="leading" constant="16" id="rRs-qA-9s1"/>
+                                        <constraint firstItem="bhl-8X-yOr" firstAttribute="top" secondItem="eNh-Pv-qKB" secondAttribute="top" id="9R6-Sa-cup"/>
+                                        <constraint firstAttribute="trailing" secondItem="bhl-8X-yOr" secondAttribute="trailing" id="e41-ZO-QhL"/>
+                                        <constraint firstItem="bhl-8X-yOr" firstAttribute="leading" secondItem="eNh-Pv-qKB" secondAttribute="leading" id="fjU-Zx-OVi"/>
+                                        <constraint firstAttribute="bottom" secondItem="bhl-8X-yOr" secondAttribute="bottom" id="qXT-cZ-gzH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="centerImageView" destination="Cce-43-L8W" id="Qyd-hA-2gK"/>
-                                    <outlet property="communeLabel" destination="WAs-yq-LXm" id="e9j-g3-g2w"/>
-                                    <outlet property="nameLabel" destination="ELr-vx-iWF" id="Uw1-l7-k1D"/>
+                                    <outlet property="centerImageView" destination="f4m-h5-FRP" id="2AZ-pI-68t"/>
+                                    <outlet property="communeLabel" destination="qUu-8Q-xha" id="Cnc-nU-bWH"/>
+                                    <outlet property="nameLabel" destination="0Ky-14-gvT" id="Yju-ao-7UV"/>
                                     <segue destination="WTb-Rk-IPO" kind="show" identifier="detailsViewSegue" id="06B-nA-Zsb"/>
                                 </connections>
                             </tableViewCell>

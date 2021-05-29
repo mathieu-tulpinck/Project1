@@ -37,12 +37,10 @@ class DetailsViewController: UIViewController {
         centerAddress.text = "\(vaccinationCenter!.address!.postCode) \(vaccinationCenter!.address!.commune), \(vaccinationCenter!.address!.street) \(vaccinationCenter!.address!.buildingNumber)"
         centerPhoneNumber.text = vaccinationCenter?.phoneNumber
         
-        //registers annotation on map view
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(VaccinationCenterAnnotation.self))
   
         mapView.addAnnotation(vaccinationCenterAnnotation)
         
-        //centers map on vaccination center
         let region = MKCoordinateRegion(center: vaccinationCenterAnnotation.coordinate, latitudinalMeters: 20000, longitudinalMeters: 20000)
         mapView.setRegion(region, animated: true)
     }

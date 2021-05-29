@@ -27,6 +27,14 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 40
+//    }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -95,13 +103,22 @@ class TableViewController: UITableViewController {
 
 //custom cell used to populate the table view
 class CenterCell: UITableViewCell {
+    
+    
+    //@IBOutlet weak var centerImageView: UIImageView!
+    //@IBOutlet weak var nameLabel: UILabel!
+    //@IBOutlet weak var communeLabel: UILabel!
+    
     @IBOutlet weak var centerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var communeLabel: UILabel!
     
     func setup(center: VaccinationCenter) {
+        
+            
         centerImageView.image = center.centerImage
         nameLabel.text = center.name
+        nameLabel.sizeToFit()
         communeLabel.text = center.address?.commune
     }
 }

@@ -2,7 +2,7 @@
 
 iOS Development - werkstuk 1
 
-## Source & inspirations
+## Sources & inspirations
 
 * ALEBICTO Mario Eguiluz , BARKER Chris, WALS Donny, Mastering iOS 14 Programming - Fourth Edition, 2021, Packt: chapters 3-4
 * https://developer.apple.com/documentation/mapkit/mapkit_annotations/annotating_a_map_with_custom_data

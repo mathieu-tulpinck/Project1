@@ -36,7 +36,6 @@ class SecondTabViewController: UIViewController {
         
         locationManager.startUpdatingLocation()
         
-        //registers annotation views on map view so the system can reuse them
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(VaccinationCenterAnnotation.self))
         for vaccinationCenterAnnotation in vaccinationCentersAnnotations {
             mapView.addAnnotation(vaccinationCenterAnnotation)
